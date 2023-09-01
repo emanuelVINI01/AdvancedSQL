@@ -28,7 +28,7 @@ dependencies {
 <dependency>
   <groupId>com.github.emanuelVINI01</groupId>
   <artifactId>advancedsql</artifactId>
-  <versionVERSION</version>
+  <version>VERSION</version>
 </dependency>
 ```
 
