@@ -35,6 +35,7 @@ class DatabaseExecutor (
         return result
     }
 
+
     fun <T> selectMany(query : String, statement : Consumer<PreparedStatement>, adapter : ISQLResultAdapter<T>) : List<T> {
         val preparedStatement = connection.prepareStatement(query)
         statement.accept(
@@ -61,29 +62,11 @@ class DatabaseExecutor (
     }
 
     fun <T> selectMany(query : String, adapter : ISQLResultAdapter<T>) : List<T> {
-        val preparedStatement = connection.prepareStatement(query)
-        val resultSet = preparedStatement.executeQuery()!!
-        val simpleResult = object : ISimpleResultSet {
-            override fun <T> get(key: String): T {
-                return resultSet.getObject(key)!! as T
-            }
-
-            override fun next(): Boolean {
-                return resultSet.next()
-            }
-        }
-        val results = mutableListOf<T>()
-        while (simpleResult.next()) {
-            results.add(adapter.adapt(
-                simpleResult
-            ))
-        }
-        preparedStatement.close()
-        return results.toList()
+        return selectMany(query, {}, adapter)
 
     }
 
-    fun <T> update(query : String, statement : Consumer<PreparedStatement>) {
+    fun update(query : String, statement : Consumer<PreparedStatement>) {
         val preparedStatement = connection.prepareStatement(query)
         statement.accept(
             preparedStatement
@@ -93,9 +76,7 @@ class DatabaseExecutor (
     }
 
     fun update(query : String) {
-        val preparedStatement = connection.prepareStatement(query)
-        preparedStatement.executeUpdate()
-        preparedStatement.close()
+        update(query) {}
     }
 
 }
