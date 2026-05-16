@@ -10,7 +10,7 @@ Na prática, este repositório representa uma fase inicial de experimentação: 
 
 ## Stack identificada
 
-Gradle, KSP, Kotlin
+Gradle, Kotlin
 
 ## Leitura do código
 
