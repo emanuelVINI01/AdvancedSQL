@@ -1,37 +1,22 @@
+> "Este projeto faz parte do meu início na programação. O código aqui é legado, reflete meus primeiros passos de aprendizado e não segue as práticas de arquitetura que utilizo hoje. Mantido aqui puramente por valor histórico e nostalgia."
+
 # AdvancedSQL
 
-The API you need in your project to use SQLite and MySQL more easily!
+## O que este projeto tentava resolver
 
-## How to download?
+API to easy use of MySQL and SQLite database.
 
-### Gradle:
+Na prática, este repositório representa uma fase inicial de experimentação: código escrito para aprender, testar ideias, automatizar tarefas ou resolver demandas pontuais em comunidades e servidores. A prioridade na época era fazer funcionar, não desenhar uma arquitetura limpa.
 
-```gradle
-repositories {
-  maven { url 'https://jitpack.io' }
-}
-dependencies {
-	implementation 'com.github.emanuelVINI01:advancedsql:VERSION'
-}
-```
+## Stack identificada
 
+Gradle, KSP, Kotlin
 
-### Maven:
+## Leitura do código
 
-```xml
-<repositories>
- <repository>
-	<id>jitpack.io</id>
-	<url>https://jitpack.io</url>
- </repository>
-</repositories>
-<dependency>
-  <groupId>com.github.emanuelVINI01</groupId>
-  <artifactId>advancedsql</artifactId>
-  <version>VERSION</version>
-</dependency>
-```
+- build Gradle identificado.
+- diretório `src/` concentra a implementação principal.
 
-## How to use?
+## Estado atual
 
-### You can check the wiki clicking [here](https://github.com/emanuelVINI01/AdvancedSQL/wiki) to tutorial about, good coding!
+Este repositório não deve ser usado como referência do meu padrão técnico atual. Ele fica público para preservar a evolução: da fase de tentativa e erro com Java/Kotlin/Minecraft/Discord até os projetos atuais com sistemas web, APIs, dados e infraestrutura mais bem definidos.
